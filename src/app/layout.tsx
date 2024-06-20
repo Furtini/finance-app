@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LazzaVeado finantial",
+  title: "Finance",
   description: "Our family finantial control platform.",
 };
 
