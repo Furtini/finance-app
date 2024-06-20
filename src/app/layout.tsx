@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   description: "Our family finantial control platform.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type Props = {
   children: React.ReactNode;
-}>) {
+}
+
+export default function RootLayout({ children }: Readonly<Props>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="h-full bg-gray-100">
+      <body className={`${inter.className} h-full`}>{children}</body>
     </html>
   );
 }

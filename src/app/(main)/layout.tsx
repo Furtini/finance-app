@@ -1,5 +1,4 @@
 import Navigation from "@/components/nav";
-import PageHeader from "@/components/page-header";
 
 type Props = {
   children: React.ReactNode
@@ -11,11 +10,12 @@ export default function MainLayout({ children }: Readonly<Props>) {
       <Navigation />
 
       <div className="py-10">
-        <PageHeader />
-
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
+        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="py-4 bg-white rounded-md border shadow-sm">
+            {children}
+          </div>
+        </div>
       </div>
     </div>
-
   );
 }
