@@ -1,4 +1,4 @@
-import ExpensesHeader from "./components/header"
+import ExpensesHeader from "./components/page-header"
 import ExpensesTable from "./components/table"
 
 export default function ExpensesPage() {
