@@ -1,6 +1,3 @@
-
 export default function IncomesPage() {
-  return (
-    <div>IncomesPage</div>
-  )
+  return <div>IncomesPage</div>;
 }

@@ -1,9 +1,10 @@
-import { getDayOfWeek } from "@/lib/utils"
-import Label from "./label"
+import { getDayOfWeek } from '@/lib/utils';
+
+import Label from './label';
 
 type Props = {
-  data: any[] //TODO: add type
-}
+  data: any[]; //TODO: add type
+};
 
 export default function TableBody({ data }: Props) {
   return (
@@ -29,24 +30,26 @@ export default function TableBody({ data }: Props) {
         </tr>
       ))}
     </tbody>
-  )
+  );
 }
 
 type TableItemProps = {
-  value1?: string | number
-  value2?: string | number
-  children?: React.ReactNode
-}
+  value1?: string | number;
+  value2?: string | number;
+  children?: React.ReactNode;
+};
 
 function TableItem({ value1, value2, children }: TableItemProps) {
   return (
     <td className="whitespace-nowrap px-1 py-2 text-sm text-gray-500">
-      {children ? children : (
+      {children ? (
+        children
+      ) : (
         <>
           <div className="font-medium text-gray-900">{value1}</div>
           {value2 && <div className="mt-0.5 text-xs text-gray-500">{value2}</div>}
         </>
       )}
     </td>
-  )
+  );
 }

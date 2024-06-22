@@ -1,10 +1,10 @@
-import { getExpenses } from "@/lib/actions"
-import TableBody from "./table-body"
-import TableHeader from "./table-header"
+import { getExpenses } from '@/lib/actions';
 
+import TableBody from './table-body';
+import TableHeader from './table-header';
 
 export default async function ExpensesTable() {
-  const expenses = await getExpenses()
+  const expenses = await getExpenses();
 
   return (
     <div className="mt-8 flow-root">
@@ -17,6 +17,5 @@ export default async function ExpensesTable() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

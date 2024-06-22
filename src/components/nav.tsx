@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navigation = [
   { name: 'Dashboard', href: '/dashboard' },
   { name: 'Expenses', href: '/expenses' },
   { name: 'Incomes', href: '/incomes' },
-]
+];
 
 function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function Navigation() {
-  const path = usePathname()
+  const path = usePathname();
 
   return (
     <nav className="bg-white shadow-sm">
@@ -49,5 +49,5 @@ export default function Navigation() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

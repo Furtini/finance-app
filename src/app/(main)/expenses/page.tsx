@@ -1,5 +1,5 @@
-import ExpensesHeader from "./components/page-header"
-import ExpensesTable from "./components/table"
+import ExpensesHeader from './components/page-header';
+import ExpensesTable from './components/table';
 
 export default function ExpensesPage() {
   return (
@@ -7,6 +7,5 @@ export default function ExpensesPage() {
       <ExpensesHeader />
       <ExpensesTable />
     </div>
-  )
+  );
 }
-

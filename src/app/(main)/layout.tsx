@@ -1,8 +1,8 @@
-import Navigation from "@/components/nav";
+import Navigation from '@/components/nav';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export default function MainLayout({ children }: Readonly<Props>) {
   return (
@@ -11,9 +11,7 @@ export default function MainLayout({ children }: Readonly<Props>) {
 
       <div className="py-10">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="py-4 bg-white rounded-md border shadow-sm">
-            {children}
-          </div>
+          <div className="rounded-md border bg-white py-4 shadow-sm">{children}</div>
         </div>
       </div>
     </div>

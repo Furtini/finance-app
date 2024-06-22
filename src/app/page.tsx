@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function WelcomePage() {
   return (
@@ -27,10 +27,15 @@ export default function WelcomePage() {
               strokeWidth={0}
             />
           </svg>
-          <rect width="100%" height="100%" strokeWidth={0} fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)" />
+          <rect
+            width="100%"
+            height="100%"
+            strokeWidth={0}
+            fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
+          />
         </svg>
         <div
-          className="absolute left-1/2 h-full right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+          className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 h-full transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
           aria-hidden="true"
         >
           <div
@@ -49,9 +54,10 @@ export default function WelcomePage() {
                   Welcome.
                 </h1>
                 <p className="mt-6 text-lg leading-8 text-gray-600 sm:max-w-md lg:max-w-none">
-                  This app provides a comprehensive view of your finances, including income, expenses, and budgeting.
-                  It’s user-friendly and offers expense tracking, bill reminders, and goal setting.
-                  It helps our family to stay organized and make informed financial decisions.
+                  This app provides a comprehensive view of your finances, including income,
+                  expenses, and budgeting. It’s user-friendly and offers expense tracking, bill
+                  reminders, and goal setting. It helps our family to stay organized and make
+                  informed financial decisions.
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   <Link
@@ -125,6 +131,5 @@ export default function WelcomePage() {
         </div>
       </div>
     </main>
-  )
+  );
 }
-
