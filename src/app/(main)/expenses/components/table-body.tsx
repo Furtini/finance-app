@@ -1,9 +1,11 @@
+import { Categories, Expense } from '@/lib/db/schemas';
 import { date, getDayOfWeek } from '@/lib/utils';
 
-import Label from './label';
+import Label, { LabelColor } from './label';
+import TableItem from './table-item';
 
 type Props = {
-  data: any[]; //TODO: add type
+  data: Expense[];
 };
 
 export default function TableBody({ data }: Props) {
@@ -18,7 +20,7 @@ export default function TableBody({ data }: Props) {
           />
           <TableItem value1={expense.expense} />
           <TableItem>
-            <Label value={expense.category} color="green" />
+            <Label value={expense.category} color={getLabelColor(expense.category)} />
           </TableItem>
           <TableItem>
             <Label value={expense.subcategory} color="gray" />
@@ -36,23 +38,21 @@ export default function TableBody({ data }: Props) {
   );
 }
 
-type TableItemProps = {
-  value1?: string | number;
-  value2?: string | number;
-  children?: React.ReactNode;
-};
-
-function TableItem({ value1, value2, children }: TableItemProps) {
-  return (
-    <td className="whitespace-nowrap px-1 py-2 text-sm text-gray-500">
-      {children ? (
-        children
-      ) : (
-        <>
-          <div className="font-medium text-gray-900">{value1}</div>
-          {value2 && <div className="mt-0.5 text-xs text-gray-500">{value2}</div>}
-        </>
-      )}
-    </td>
-  );
+function getLabelColor(value: Categories): LabelColor {
+  switch (value) {
+    case 'needs':
+      return 'red';
+    case 'free':
+      return 'indigo';
+    case 'house':
+      return 'amber';
+    case 'leisure':
+      return 'violet';
+    case 'travels':
+      return 'sky';
+    case 'education':
+      return 'emerald';
+    default:
+      return 'gray';
+  }
 }

@@ -1,5 +1,6 @@
 'server-only';
 
+import { InferSelectModel } from 'drizzle-orm';
 import {
   date,
   index,
@@ -11,6 +12,7 @@ import {
   timestamp,
   varchar,
 } from 'drizzle-orm/pg-core';
+import { z } from 'zod';
 
 export const categories = pgEnum('categories', [
   'needs',
@@ -20,6 +22,10 @@ export const categories = pgEnum('categories', [
   'education',
   'free',
 ]);
+
+const categoriesSchema = z.enum(categories.enumValues);
+export type Categories = z.infer<typeof categoriesSchema>;
+
 export const subcategories = pgEnum('subcategories', [
   'groceries',
   'transport',
@@ -31,6 +37,9 @@ export const subcategories = pgEnum('subcategories', [
   'furniture',
   'other',
 ]);
+
+const subcategoriesSchema = z.enum(subcategories.enumValues);
+export type Subcategories = z.infer<typeof subcategoriesSchema>;
 
 export const expenses = pgTable(
   'expenses',
@@ -59,3 +68,5 @@ export const expenses = pgTable(
     };
   },
 );
+
+export type Expense = InferSelectModel<typeof expenses>;

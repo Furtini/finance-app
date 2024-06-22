@@ -5,7 +5,11 @@ export default function TableHeader() {
     <thead>
       <tr>
         {headers.map((header) => (
-          <th scope="col" className="px-1 py-2 text-left text-sm font-semibold text-gray-900">
+          <th
+            key={header}
+            scope="col"
+            className="px-1 py-2 text-left text-xs font-semibold uppercase text-gray-900"
+          >
             {header}
           </th>
         ))}
