@@ -1,4 +1,4 @@
-import { getDayOfWeek } from '@/lib/utils';
+import { date, getDayOfWeek } from '@/lib/utils';
 
 import Label from './label';
 
@@ -11,14 +11,17 @@ export default function TableBody({ data }: Props) {
     <tbody className="divide-y divide-gray-200 bg-white">
       {data.map((expense) => (
         <tr key={expense.id}>
-          <TableItem value1={expense.date} value2={getDayOfWeek(expense.date)} />
-          <TableItem value1={expense.interestDate} value2={getDayOfWeek(expense.interestDate)} />
+          <TableItem value1={date(expense.date)} value2={getDayOfWeek(expense.date)} />
+          <TableItem
+            value1={date(expense.interestDate)}
+            value2={getDayOfWeek(expense.interestDate)}
+          />
           <TableItem value1={expense.expense} />
           <TableItem>
-            <Label value={expense.category} />
+            <Label value={expense.category} color="green" />
           </TableItem>
           <TableItem>
-            <Label value={expense.subcategory} />
+            <Label value={expense.subcategory} color="gray" />
           </TableItem>
           <TableItem value1={expense.amount} />
           <TableItem value1={expense.place} />
