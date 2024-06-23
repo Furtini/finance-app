@@ -22,11 +22,11 @@ export default function TableBody({ data }: Props) {
           <TableItem>
             <Label value={expense.category} color={getLabelColor(expense.category)} />
           </TableItem>
+          <TableItem value1={expense.amount} />
+          <TableItem value1={expense.place} />
           <TableItem>
             <Label value={expense.category} color="gray" />
           </TableItem>
-          <TableItem value1={expense.amount} />
-          <TableItem value1={expense.place} />
           <TableItem>
             <a href="#" className="text-indigo-600 hover:text-indigo-900">
               Edit<span className="sr-only">, {expense.expense}</span>

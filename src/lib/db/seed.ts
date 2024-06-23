@@ -12,5 +12,6 @@ for (const table of [tags]) {
 }
 
 await seeds.tags(db);
+await seeds.expenses(db);
 
 await connection.end()

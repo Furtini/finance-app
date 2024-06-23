@@ -1,4 +1,4 @@
-const headers = ['Date', 'Reference Date', 'Expense', 'Category', 'Subcategory', 'Amount', 'Place'];
+const headers = ['Date', 'Reference Date', 'Expense', 'Category', 'Amount', 'Place', 'Tags'];
 
 export default function TableHeader() {
   return (
