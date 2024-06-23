@@ -2,6 +2,7 @@
   "name": "finance-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +14,8 @@
     "ci:lint": "next lint",
     "ci:prettier": "prettier --check .",
     "db:push": "drizzle-kit push",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "db:seed": "cross-env DATABASE_URL=postgres://postgres:furtini1001@localhost:5432/finance-db npx tsx ./src/lib/db/seed.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.0.4",
@@ -32,6 +34,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vercel/style-guide": "^6.0.0",
+    "cross-env": "^7.0.3",
     "drizzle-kit": "^0.22.7",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.4",

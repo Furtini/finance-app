@@ -23,7 +23,7 @@ export default function TableBody({ data }: Props) {
             <Label value={expense.category} color={getLabelColor(expense.category)} />
           </TableItem>
           <TableItem>
-            <Label value={expense.subcategory} color="gray" />
+            <Label value={expense.category} color="gray" />
           </TableItem>
           <TableItem value1={expense.amount} />
           <TableItem value1={expense.place} />
