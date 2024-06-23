@@ -58,41 +58,42 @@ export const expenses = pgTable(
 export type Expense = InferSelectModel<typeof expenses>;
 
 export const expenseRelations = relations(expenses, ({ many }) => ({
-  expenseTags: many(expenseTags)
-}))
+  tags: many(expenseTags),
+}));
 
-export const tags = pgTable(
-  'tags',
-  {
-    id: serial('id').primaryKey(),
-    name: varchar('tag', { length: 15 }).notNull().unique(),
-  },
-);
+export const tags = pgTable('tags', {
+  id: serial('id').primaryKey(),
+  name: varchar('tag', { length: 15 }).notNull().unique(),
+});
 
 export type Tag = InferSelectModel<typeof tags>;
 
 export const tagsRelations = relations(tags, ({ many }) => ({
-  expenseTags: many(expenseTags)
-}))
+  tags: many(expenseTags),
+}));
 
 export const expenseTags = pgTable(
   'expense_tags',
   {
-    tagId: integer('tagId').notNull().references(() => tags.id),
-    expenseId: integer('expenseId').notNull().references(() => expenses.id)
+    tagId: integer('tagId')
+      .notNull()
+      .references(() => tags.id),
+    expenseId: integer('expenseId')
+      .notNull()
+      .references(() => expenses.id),
   },
   (t) => ({
-    pk: primaryKey({ columns: [t.tagId, t.expenseId] })
-  })
-)
+    pk: primaryKey({ columns: [t.tagId, t.expenseId] }),
+  }),
+);
 
 export const expenseTagsRelation = relations(expenseTags, ({ one }) => ({
   tag: one(tags, {
     fields: [expenseTags.tagId],
-    references: [tags.id]
+    references: [tags.id],
   }),
   expense: one(expenses, {
     fields: [expenseTags.expenseId],
-    references: [expenses.id]
-  })
-}))
+    references: [expenses.id],
+  }),
+}));

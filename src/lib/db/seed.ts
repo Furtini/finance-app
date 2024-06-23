@@ -1,17 +1,19 @@
-import { getTableName, Table, sql } from "drizzle-orm";
-import { connection, DB, db } from ".";
+import { Table, getTableName, sql } from 'drizzle-orm';
+
+import { DB, connection, db } from '.';
+import { expenseTags, expenses, tags } from './schemas';
 import * as seeds from './seeds';
-import { tags } from "./schemas";
 
 async function resetTable(db: DB, table: Table) {
   return db.execute(sql.raw(`TRUNCATE ${getTableName(table)} RESTART IDENTITY CASCADE`));
 }
 
-for (const table of [tags]) {
+for (const table of [expenseTags, tags, expenses]) {
   await resetTable(db, table);
 }
 
 await seeds.tags(db);
 await seeds.expenses(db);
+await seeds.expenseTags(db);
 
-await connection.end()
+await connection.end();

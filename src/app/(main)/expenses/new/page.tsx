@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function NewExpense() {
   return (
@@ -58,9 +58,7 @@ export default function NewExpense() {
               <label htmlFor="note" className="block text-sm font-medium leading-6 text-gray-900">
                 Note
               </label>
-              <p className="mt-0.5 text-sm text-gray-600">
-                Write any comment about this expense.
-              </p>
+              <p className="mt-0.5 text-sm text-gray-600">Write any comment about this expense.</p>
               <div className="mt-2">
                 <textarea
                   id="note"

@@ -1,5 +1,5 @@
-import type { DB } from "..";
-import { tags } from "../schemas";
+import type { DB } from '..';
+import { tags } from '../schemas';
 
 export default async function seed(db: DB) {
   const values = [
@@ -14,6 +14,5 @@ export default async function seed(db: DB) {
     { name: 'other' },
   ];
 
-  await db.insert(tags).values(values)
+  await db.insert(tags).values(values);
 }
-

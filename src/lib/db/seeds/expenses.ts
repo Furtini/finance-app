@@ -1,8 +1,8 @@
-import type { DB } from "..";
-import { expenses } from "../schemas";
+import type { DB } from '..';
+import { expenses } from '../schemas';
 
 export default async function seed(db: DB) {
-  await db.insert(expenses).values(values)
+  await db.insert(expenses).values(values);
 }
 
 const values = [
@@ -13,7 +13,7 @@ const values = [
     category: 'leisure' as const,
     amount: '20.98',
     place: 'New York Pizza',
-    note: 'Order from app Thuisbezorgd'
+    note: 'Order from app Thuisbezorgd',
   },
   {
     date: '2024-01-16',
@@ -21,7 +21,6 @@ const values = [
     expense: 'Groceries',
     category: 'needs' as const,
     amount: '5.41',
-    place: 'Alber Heijn'
+    place: 'Alber Heijn',
   },
 ];
-
